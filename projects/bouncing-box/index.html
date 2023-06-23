@@ -8,7 +8,7 @@
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: teal;
+			background-color: rgb(102, 211, 30)
 			font-size: 300%;
 			text-align: center;
 			user-select: none;
@@ -19,6 +19,10 @@
 		}
 		.board{
 			height: 100vh;
+			color: rgb(154, 156, 38);
+		}
+		body {
+			background-image: url(https://img.mlbstatic.com/mlb-images/image/private/t_2x1/t_w1536/mlb/w8rovek2mqroji20sj63.jpg);
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -42,16 +46,19 @@
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
 
 			// Every 50 milliseconds, call the update Function (see below)
-			setInterval(update, 50);
+			var Interval = setInterval(update, 50);
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
+			box.on('click', handleBoardClick);
+
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
-				box.css("left", newPositionX);
+			function moveBoxTo(newPositionX,newPositionY) {
+				box.css("left", newPositionX)
+				box.css("top", newPositionY);
+		
 			}
-
 			// changes the text displayed on the Box
 			function changeBoxText(newText) {
 				box.text(newText);
@@ -63,6 +70,11 @@
 			
 			// TODO 2 - Variable declarations 
 			var positionX = 0;
+			var points = 0;
+			var speed = 10;
+			var positionY = 0;
+			var speedY = 5;
+			var boardHeight = jQuery(window).height();
 
 			
 			/* 
@@ -70,20 +82,45 @@
 			it should move the Box to a new location. If the box drifts off the screen
 			turn it around! 
 			*/
-			function update() {
+			function update() 
+			positionX = positionX + speed
+			positionY = positionY + speedY 
+			
+			moveBoxTo(positionX, positionY);
+			if (positionX > boardWidth) {
+				speed = speed * -1
+			}else if (positionX < 0) {
+				speed = speed * -1
+			}else if (positionY > boardHeight) {
+				speedY = speedY * -1
+			}else if (positionY < 0) {
+				speedY = speedY * -1
+			}
+			{
 				/* Your Code to Increase positionX by 10 HERE*/
-				positionX = positionX + 10;
-			 moveBoxTo(positionX)	
+				
 
 			};
+				var Click = 0;
 
+				function endGame() {
+					clearInterval(interval);
+					if(click !== box) {
+					endGame
+				}
+			}
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
 			it should increase the points total, increase the speed, and move the box to
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				
+				positionX = 0;
+				positionY = 0
+				points = points + 1
+				changeBoxText(points);
+				speed = speed + 3
+				speedY = speedY + 3
 
 
 			};
