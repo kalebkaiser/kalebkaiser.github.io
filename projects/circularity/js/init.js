@@ -78,14 +78,19 @@ var init = function (window) {
         }
      
 
-        
+if (circle.y > canvas.height) {
+    circle.y = 0
+}       
+ if (circle.y < 0) {
+    circle.y = canvas.height
+ } 
 
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
 
 
             
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
-
+    }
 
             /////////////////////////////////////////////////////////////
             // --- NO CODE BELOW HERE  --- DO NOT REMOVE THIS CODE --- //
@@ -100,7 +105,7 @@ var init = function (window) {
         game.update = update;
 
         app.addUpdateable(window.opspark.game);
-    
+    }
 };
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
