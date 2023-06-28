@@ -485,7 +485,7 @@ In your bash terminal, enter the following commands, pressing ENTER after each o
 
 `git add .`
 
-`git commit -m 'refactor to create 100 circles using loops'`
+`git commit -m 'refactor to create 10 circles using loops'`
 
 `git push`
 
