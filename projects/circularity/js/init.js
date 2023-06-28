@@ -50,7 +50,8 @@ var init = function (window) {
             // TODO 4 : Update the circle's position //
 
             for (var i = 0; i < circles.length; i++) {
-
+                physikz.updatePosition(circles[0]);
+                game.checkCirclesPosition(circle[0]);
             }
             physikz.updatePosition(circles[0]);
             physikz.updatePosition(circles[1]);
@@ -60,11 +61,11 @@ var init = function (window) {
         }
 
         // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
-        game.checkCirclePosition(circle[0]);
-        game.checkCirclePosition(circle[1]);
-        game.checkCirclePosition(circle[2]);
-        game.checkCirclePosition(circle[3]);
-        game.checkCirclePosition(circle[4]);
+        game.checkCirclesPosition(circle[0]);
+        game.checkCirclesPosition(circle[1]);
+        game.checkCirclesPosition(circle[2]);
+        game.checkCirclesPosition(circle[3]);
+        game.checkCirclesPosition(circle[4]);
         // TODO 9 : Iterate over the array
 
 
