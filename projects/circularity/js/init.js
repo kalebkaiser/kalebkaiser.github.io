@@ -50,26 +50,17 @@ var init = function (window) {
             // TODO 4 : Update the circle's position //
 
             for (var i = 0; i < circles.length; i++) {
-                physikz.updatePosition(circles[0]);
-                game.checkCirclesPosition(circle[0]);
+                physikz.updatePosition(circles[i]);
+                game.checkCirclePosition(circles[i]);
             }
-            physikz.updatePosition(circles[0]);
-            physikz.updatePosition(circles[1]);
-            physikz.updatePosition(circles[2]);
-            physikz.updatePosition(circles[3]);
-            physikz.updatePosition(circles[4]);
+            
         }
-
         // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
-        game.checkCirclesPosition(circle[0]);
-        game.checkCirclesPosition(circle[1]);
-        game.checkCirclesPosition(circle[2]);
-        game.checkCirclesPosition(circle[3]);
-        game.checkCirclesPosition(circle[4]);
+
         // TODO 9 : Iterate over the array
 
 
-    }
+    
 
     /* 
     This Function should check the position of a circle that is passed to the 
@@ -85,12 +76,14 @@ var init = function (window) {
         if (circle.x < 0) {
             circle.x = canvas.width
         }
-        if (circle.y > canvas.height)
+     
+
+        
 
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
 
 
-
+            
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
 
 
@@ -107,12 +100,12 @@ var init = function (window) {
         game.update = update;
 
         app.addUpdateable(window.opspark.game);
-    }
+    
 };
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
-if ((typeof process !== 'undefined') &&
+ if ((typeof process !== 'undefined') &&
     (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports = init;
-}
+    } 
